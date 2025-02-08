@@ -55,19 +55,19 @@
     <script>
         let noClickCount = 0;
         let pickupLines = [
-            "Yakin? Aku sudah menyiapkan coklat spesial untukmu! 🍫",
-            "Kalau kamu nolak, aku bakal sedih seharian... 😢",
-            "Kamu nggak lihat betapa manisnya aku? 🥺",
-            "Semakin kamu nolak, semakin aku cinta! 💘",
-            "Kalau aku janji kasih hadiah spesial, masih nolak? 🎁",
-            "Aku bakal tunggu sampai kamu bilang 'Yes'! ⏳"
+            "Yakin? Galang udah beliin rini coklat loh 🍫",
+            "Kalau rini nolak, buat siapa dong bunga lily ini 😢",
+            "kenapa rini nolak? 🥺",
+            "Semakin Rini nolak, semakin Galang cinta! 💘",
+            "Kalau Galang janji kasih hadiah spesial, masih nolak? 🎁",
+            "Galang bakal tunggu sampai Rini bilang 'Yes'! ⏳"
         ];
 
         function rejectProposal() {
             if (noClickCount < pickupLines.length) {
                 document.getElementById("message").innerText = pickupLines[noClickCount];
             } else {
-                document.getElementById("message").innerText = "Tidak ada jalan keluar, Rini! 😈";
+                document.getElementById("message").innerText = "Gak akan bisa kabur kamu, Rini! 😈";
             }
             
             let yesBtn = document.getElementById("yesBtn");
