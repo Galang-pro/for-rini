@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine untuk Rini</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #FFC0CB;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #D6001C;
+            margin-top: 50px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        #yesBtn {
+            background-color: #FF1493;
+            color: white;
+        }
+        #noBtn {
+            background-color: #808080;
+            color: white;
+        }
+        #message {
+            font-size: 24px;
+            color: #8B0000;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Maukah kamu jadi Valentine-ku? ❤️</h1>
+    <div class="container">
+        <button id="yesBtn" class="btn" onclick="acceptProposal()">Yes</button>
+        <button id="noBtn" class="btn" onclick="rejectProposal()">No</button>
+    </div>
+    <p id="message"></p>
+
+    <script>
+        let noClickCount = 0;
+        let pickupLines = [
+            "Yakin? Aku sudah menyiapkan coklat spesial untukmu! 🍫",
+            "Kalau kamu nolak, aku bakal sedih seharian... 😢",
+            "Kamu nggak lihat betapa manisnya aku? 🥺",
+            "Semakin kamu nolak, semakin aku cinta! 💘",
+            "Kalau aku janji kasih hadiah spesial, masih nolak? 🎁",
+            "Aku bakal tunggu sampai kamu bilang 'Yes'! ⏳"
+        ];
+
+        function rejectProposal() {
+            if (noClickCount < pickupLines.length) {
+                document.getElementById("message").innerText = pickupLines[noClickCount];
+            } else {
+                document.getElementById("message").innerText = "Tidak ada jalan keluar, Rini! 😈";
+            }
+            
+            let yesBtn = document.getElementById("yesBtn");
+            let currentSize = parseInt(window.getComputedStyle(yesBtn).fontSize);
+            yesBtn.style.fontSize = (currentSize + 10) + "px";
+            
+            noClickCount++;
+        }
+
+        function acceptProposal() {
+            document.body.innerHTML = '<h1>YAY! 🎉 Aku tahu kamu nggak bisa nolak! 💖</h1>';
+        }
+    </script>
+</body>
+</html>
