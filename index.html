@@ -52,7 +52,7 @@
 </head>
 <body>
     <h1>Maukah kamu jadi Valentine-ku? ❤️</h1>
-    <img src="valentinesticker.jpg" alt="Gambar Valentine">
+    <img id="valentineImage" src="valentinesticker.jpg" alt="Gambar Valentine">
     <div class="container">
         <button id="yesBtn" class="btn" onclick="acceptProposal()">Yes</button>
         <button id="noBtn" class="btn" onclick="rejectProposal()">No</button>
@@ -62,12 +62,13 @@
     <script>
         let noClickCount = 0;
         let pickupLines = [
-            "Yakin? Galang udah beliin rini coklat loh 🍫",
+           "Yakin? Galang udah beliin rini coklat loh 🍫",
             "Kalau rini nolak, buat siapa dong bunga lily ini 😢",
             "kenapa rini nolak? 🥺",
             "Semakin Rini nolak, semakin Galang cinta! 💘",
             "Kalau Galang janji kasih hadiah spesial, masih nolak? 🎁",
             "Galang bakal tunggu sampai Rini bilang 'Yes'! ⏳"
+
 
         ];
 
@@ -82,11 +83,13 @@
             let currentSize = parseInt(window.getComputedStyle(yesBtn).fontSize);
             yesBtn.style.fontSize = (currentSize + 10) + "px";
             
+            document.getElementById("valentineImage").src = "valentinestickerno.gif?" + new Date().getTime();
+            
             noClickCount++;
         }
 
         function acceptProposal() {
-            document.body.innerHTML = '<h1>YAY! 🎉 Aku tahu kamu nggak bisa nolak! 💖</h1><img src="happy-valentine.jpg" alt="Gambar Bahagia">';
+            document.body.innerHTML = '<h1>YAY! 🎉 Aku tahu kamu nggak bisa nolak! 💖</h1><img src="valentinestickeryes.gif?' + new Date().getTime() + '" alt="Gambar Bahagia">';
         }
     </script>
 </body>
